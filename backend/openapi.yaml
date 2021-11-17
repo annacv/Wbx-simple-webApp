@@ -1,0 +1,102 @@
+openapi: 3.0.1
+info:
+  title: Chargers API
+  description: API for tech skills
+  version: '1.0'
+servers:
+  - url: http://localhost:3000
+  
+components:
+  schemas:
+    charger:
+      type: object
+      properties:
+        id: 
+          type: integer
+        type:
+          type: string
+          enum: [Cooper, Commander, Pulsar]
+        serialNumber:
+          type: string
+        name:
+          type: string
+        chargingTime:
+          type: integer
+        energySupplied:
+          type: integer
+        currentCharging:
+          type: integer
+        wifiSignal:
+          type: integer
+        manufacturedDate:
+          type: string
+        status: 
+          type: integer
+        connectivityType:
+          type: string
+          enum: [wifi, ethernet]
+    
+paths:
+  /chargers/{id}:
+    parameters:
+      - name: id
+        in: path
+        description: Charger id
+        required: true
+        schema:
+          type: integer
+    delete:
+      description: Delete a charger
+      responses:
+        '200':
+          description: charger deleted
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+              examples: {}
+      servers:
+        - url: http://localhost:3000
+    get:
+      description: Retrieve a charger
+      responses:
+        '200':
+          description: Charger retrieved
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: object
+                allOf:
+                  - $ref: '#/components/schemas/charger'
+    servers:
+      - url: http://localhost:3000
+  /chargers:
+    get:
+      description: Retrieve all chargers
+      responses:
+        '200':
+          description: chargers listed
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: array
+                items:
+                  type: object
+                  allOf:
+                   - $ref: '#/components/schemas/charger'
+              example:
+                - id: 0
+                  type: Pulsar
+                  name: chargers 0
+                  serialNumber: SB-12345-0
+                  chargingTime: 58427246
+                  energySupplied: 74
+                  currentCharging: 7
+                  wifiSignal: null
+                  status: 51
+                  manufacturedDate: 2016-02-01T02:48:54.858Z
+                  connectivityType: wifi
+      servers:
+        - url: http://localhost:3000
+    servers:
+      - url: http://localhost:3000
