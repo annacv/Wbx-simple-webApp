@@ -170,32 +170,6 @@
       "connectivityType": "wifi"
     },
     {
-      "id": 13,
-      "type": "Pulsar",
-      "name": "chargers 13",
-      "serialNumber": "SN-78922-13",
-      "chargingTime": 5689956,
-      "energySupplied": 6,
-      "currentCharging": 18,
-      "manufacturedDate": "2015-03-03T19:05:45.396Z",
-      "wifiSignal": 75,
-      "status": 51,
-      "connectivityType": "ethernet"
-    },
-    {
-      "id": 14,
-      "type": "Pulsar",
-      "name": "chargers 14",
-      "serialNumber": "SN-26211-14",
-      "chargingTime": 9926905,
-      "energySupplied": 39,
-      "currentCharging": 20,
-      "manufacturedDate": "2018-08-12T21:19:59.241Z",
-      "wifiSignal": null,
-      "status": 51,
-      "connectivityType": "wifi"
-    },
-    {
       "id": 15,
       "type": "Pulsar",
       "name": "chargers 15",
