@@ -1,3 +1,7 @@
+<style lang="scss" scoped>
+  @import '@/assets/scss/tabs.scss';
+</style>
+
 <template>
   <div class="tabs">
     <div
@@ -26,47 +30,23 @@ export default {
   emits: ["update:modelValue"],
 
   setup(props, { emit }) {
-    const active = computed(() => props.modelValue);
-    const tabs = ref([]);
+    const active = computed(() => props.modelValue)
+    const tabs = ref([])
 
     function selectTab(tab) {
-      emit("update:modelValue", tab);
+      emit("update:modelValue", tab)
     }
 
     provide("tabsState", {
       active,
       tabs,
-    });
+    })
 
     return {
       tabs,
       active,
       selectTab,
-    };
+    }
   },
-};
+}
 </script>
-
-<style lang="scss" scoped>
-.tabs {
-  display: flex;
-}
-
-.tab {
-  padding: 0.5rem 1rem;
-  font-weight: 500;
-  font-size: 0.75rem;
-  line-height: 1.5rem;
-
-  &--active {
-    border-bottom: 0.1875rem solid;
-    color: #000;
-  }
-
-  &--inactive {
-    border-bottom: none;
-    color: #8e98a7;
-  } 
-}
-
-</style>

@@ -1,3 +1,7 @@
+<style lang="scss" scoped>
+  @import '@/assets/scss/img.scss';
+</style>
+
 <template>
   <img
     :alt="`Image of ${image}`"
@@ -24,37 +28,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .image {
-    &--pulsar {
-      width: auto;
-      height: 1.875rem;
-    }
-
-    &--commander {
-      width: auto;
-      height: 2rem;
-    }
-
-    &--copper {
-      width: auto;
-      height: 2rem;
-    }
-
-    &--wifi,
-    &--ethernet {
-      width: auto;
-      height: 1rem;
-    }
-
-    &--wifi {
-      margin-right: 0.25rem;
-    }
-
-    &--ethernet {
-      margin-right: 0.5rem;
-    }
-  }
-  
-</style>

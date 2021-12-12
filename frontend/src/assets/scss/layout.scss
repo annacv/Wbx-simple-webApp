@@ -1,0 +1,129 @@
+html,
+  body {
+    margin: 0;
+    height: 100%;
+    font-family: Roboto, sans-serif;
+    text-rendering: optimizeLegibility;
+    background-color: #ededed;
+  }
+
+  #app {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    height: 100vh;
+  }
+
+.header,
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #000;
+}
+
+.header {
+  align-self: flex-start;
+  padding: 1rem;
+
+  @media only screen and (min-width: 768px) {
+    padding: 1.25rem 3rem 1rem 3rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 1.25rem 5rem 1rem 5rem;
+  }
+
+  @media only screen and (min-width: 1900px) {
+    padding: 1.25rem 20rem 1rem 20rem;
+  }
+}
+
+.footer {
+  align-self: flex-end;
+  padding: 0.75rem 1rem;
+
+  @media only screen and (min-width: 768px) {
+    padding: 0.75rem 3rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 0.75rem 5rem;
+  }
+
+  @media only screen and (min-width: 1900px) {
+    padding: 0.75rem 20rem;
+  }
+}
+
+.heading {
+  line-height: 1.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.header {
+  &__claim {
+    align-self: center;
+  }
+
+  &__image {
+    padding: 1rem;
+    background-image: url('~@/assets/images/wallbox-icon.svg');
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media only screen and (min-width: 768px) {
+      padding: 0.5rem 5rem;
+      background-image: url('~@/assets/images/wallbox-logo.svg');
+      background-size: 132px 32px;
+    }
+  }
+}
+
+.footer {
+  &__credits {
+    display: flex;
+    align-items: center;
+
+    &.heading {
+      display: none;
+
+      @media only screen and (min-width: 768px) {
+        display: inline-flex;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    margin-left: 1.25rem;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0;
+  width: 100%;
+  height: calc(100% - (4rem + 3.25rem));
+
+  @media only screen and (min-width: 768px) {
+    padding: 0 3rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding: 0 5rem;
+  }
+
+  @media only screen and (min-width: 1900px) {
+    padding: 0 20rem;
+  }
+}

@@ -1,3 +1,7 @@
+<style lang="scss" scoped>
+  @import '@/assets/scss/btn.scss';
+</style>
+
 <template>
   <template v-if="text">
     <button
@@ -61,35 +65,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-  .btn {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-
-    &--close,
-    &--info,
-    &--remove {
-      &:hover {
-        opacity: 0.8;
-      }
-    }
-    
-    &--close {
-      width: 0.875rem;
-      height: 0.875rem;
-    }
-
-    &--info {
-      float: left;
-      color: #5599ff;
-    }
-
-    &--remove {
-      float: right;
-      color: #ff6363;
-    }
-  }
-
-</style>

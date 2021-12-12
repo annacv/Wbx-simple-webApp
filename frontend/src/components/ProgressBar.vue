@@ -1,3 +1,7 @@
+<style lang="scss" scoped>
+  @import '@/assets/scss/progressBar.scss';
+</style>
+
 <template>
   <div class="progress">
     <div class="progress__info">
@@ -65,43 +69,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.progress {
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-
-  &__bar {
-    position: relative;
-    display: block;
-    margin: 0.5rem 0;
-    height: 0.625rem;
-    overflow: hidden;
-    border-radius: 0.375rem;
-    background: #eee;
-  }
-
-  &__inner {
-    position: absolute;
-    height: 0.625rem;
-    border-radius: 0.375rem;
-    background: #000;
-  }
-
-  &__info,
-  &__legend {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    color: #8e98a7;
-    line-height: 0.875rem;
-    font-size: 0.875rem;
-  }
-
-  &__reached {
-    color: #000;
-  }
-
-}
-</style>

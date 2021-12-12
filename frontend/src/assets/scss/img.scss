@@ -1,0 +1,30 @@
+.image {
+  &--pulsar {
+    width: auto;
+    height: 1.875rem;
+  }
+
+  &--commander {
+    width: auto;
+    height: 2rem;
+  }
+
+  &--copper {
+    width: auto;
+    height: 2rem;
+  }
+
+  &--wifi,
+  &--ethernet {
+    width: auto;
+    height: 1rem;
+  }
+
+  &--wifi {
+    margin-right: 0.25rem;
+  }
+
+  &--ethernet {
+    margin-right: 0.5rem;
+  }
+}

@@ -13,21 +13,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-  html,
-  body {
-    margin: 0;
-    height: 100%;
-    font-family: Roboto, sans-serif;
-    text-rendering: optimizeLegibility;
-    background-color: #ededed;
-  }
-
-  #app {
-    display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start;
-    height: 100vh;
-  }
-</style>

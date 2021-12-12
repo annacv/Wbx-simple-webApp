@@ -1,0 +1,20 @@
+.tabs {
+  display: flex;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.5rem;
+
+  &--active {
+    border-bottom: 0.1875rem solid;
+    color: #000;
+  }
+
+  &--inactive {
+    border-bottom: none;
+    color: #8e98a7;
+  } 
+}

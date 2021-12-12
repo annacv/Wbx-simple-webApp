@@ -1,0 +1,61 @@
+.modal {
+  position: absolute;
+  top: 4rem;
+  left: 0;
+  z-index: 10000;
+  background-color: #fff;
+  width: 100%;
+  height: calc(100% - (4rem + 3.25rem));;
+  box-sizing: border-box;
+
+  @media only screen and (min-width: 768px) {
+    top: 12%;
+    left: 16%;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.125rem 0.25rem 0 rgba(80, 80, 80, 0.5);
+    width: 32.75rem;
+    height: 27.375rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    left: 24%;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    left: 28%;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    left: calc(44% - (10rem));
+  }
+
+  &__backdrop {
+    display: none;
+
+    @media only screen and (min-width: 768px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      background-color: rgba(0, 0, 0, 0.68);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+
+  &__content {
+    padding: 0.5rem 1.5rem 0 1.5rem;
+  }
+}

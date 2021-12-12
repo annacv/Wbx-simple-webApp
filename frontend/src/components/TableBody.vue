@@ -34,7 +34,7 @@
         <span v-if="charger.energySupplied">{{ charger.energySupplied }} kWh</span>
       </div>
       <div class="data-table__item">
-        {{ charger.chargingCurrent }}
+        <span v-if="charger.currentCharging">{{ charger.currentCharging }} A</span>
       </div>
       <div class="data-table__item">
         {{ formatDate(charger.manufacturedDate) }}

@@ -1,0 +1,215 @@
+.data-table {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0.5rem 0;
+  background-color: #fff;
+  width: 100%;
+  
+  @media only screen and (min-width: 768px) {
+    padding: 0;
+    border: 0.0625rem solid #eee;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(166, 166, 166, 0.5);
+    margin: 4rem 0;
+  }
+
+  &__header,
+  &__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__header {
+    padding: 0.875rem 1rem;
+    border-top: 0.0625rem solid #ededed;
+    border-bottom: 0.0625rem solid #ededed;
+
+    @media only screen and (min-width: 1024px) {
+      padding: 0.875rem 4.875rem;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-height: 20rem;
+    overflow: scroll;
+
+    @media only screen and (min-width: 768px) {
+      max-height: 12.5rem;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      max-height: 22rem;
+    }
+  }
+
+  &__row {
+    padding: 0.75rem 1rem;
+
+    @media only screen and (min-width: 1024px) {
+      padding: 0.75rem 4.875rem;
+    }
+
+    &:nth-child(even) {
+      background-color: #fff;
+    }
+
+    &:nth-child(odd) {
+      background-color: #fbfbfb;
+    }
+  }
+  
+  &__footer {
+    padding: 0.875rem 1rem;
+    border-top: 0.0625rem solid #ededed;
+    line-height: 1.5rem;
+    width: 100%;
+  }
+
+  &__item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-self: center;
+    color: #8e98a7;
+    line-height: 1rem;
+    font-size: 0.875rem;
+
+    &:nth-child(1),
+    &:nth-child(8) {
+      width: 18%;
+    }
+
+    &:nth-child(3) {
+      width: 30%;
+    }
+
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      display: none;
+    }
+
+    &:nth-child(7) {
+      width: 34%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      &:nth-child(1) {
+        width: 10%;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: flex;
+      }
+  
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: 16%;
+      }
+  
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        width: 12%;
+      }
+  
+      &:nth-child(7) {
+        width: 18%;
+      }
+  
+      &:nth-child(8) {
+        width: 12%;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      &:nth-child(1) {
+        width: 14%;
+      }
+  
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: 14%;
+      }
+  
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        width: 10%;
+      }
+  
+      &:nth-child(7) {
+        width: 18%;
+      }
+  
+      &:nth-child(8) {
+        width: 20%;
+      }
+    }
+
+    @media only screen and (min-width: 1200px) {
+      &:nth-child(1) {
+        width: 14%;
+      }
+  
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: 12%;
+      }
+  
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        width: 8%;
+      }
+  
+      &:nth-child(7) {
+        width: 18%;
+      }
+  
+      &:nth-child(8) {
+        width: 20%;
+      }
+    }
+
+    .pulsar,
+    .commander,
+    .copper {
+      display: none;
+
+      @media only screen and (min-width: 1024px) {
+        display: flex;
+        flex-flow: column nowrap;
+      }
+    }
+
+    &.connectivity {
+      text-transform: capitalize;
+    }
+
+    &.actions {
+      .btn-container {
+        width: 100%;
+      }
+    }
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+
+    @media only screen and (min-width: 1024px) {
+      justify-content: center;
+      margin: 0 0 0 -4.875rem;
+      width: 4.8rem;
+		}
+  }
+}
