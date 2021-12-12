@@ -15,6 +15,7 @@
       @click="onClick"
     >
       <Img
+        :aria-label="ariaLabel"
         :image="image"
         format="svg"
       />
@@ -29,6 +30,10 @@ export default {
   name: 'Btn',
   components: { Img },
   props: {
+    ariaLabel: {
+      type: String,
+      default: ''
+    },
     action: {
       type: String,
       default: 'info'

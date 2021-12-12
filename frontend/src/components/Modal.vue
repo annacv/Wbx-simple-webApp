@@ -11,7 +11,7 @@
         </div>
         <Btn
           action="close"
-          alt="Click to close the modal"
+          aria-label="Click to close the modal"
           image="cross"
           @onClick="close"
         >

@@ -10,7 +10,8 @@ export const checkStatus = (value) => {
 }
 
 export const formatDate = (date) => {
-  return new Date(date).toDateString()
+  date = new Date(date).toDateString().substring(3)
+  return date
 }
 
 export const getTime = (timestamp) => {
