@@ -27,7 +27,7 @@ export default {
   name: "ProgressBar",
   props: {
     end: {
-      type: Number,
+      type: [Number],
       default: 100
     },
     reached: {
@@ -56,8 +56,12 @@ export default {
     }
   },
   setup(props) {
-    const percentage = computed(() => (props.reached * 100)%props.end)
-    return { props, percentage }
+    const percentage = computed(() => (props.reached * 100)/props.end)
+
+    return {
+      props,
+      percentage
+    }
   }
 }
 </script>

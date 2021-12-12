@@ -10,12 +10,15 @@
 <script>
 export default {
   name: "TheHeader",
-
   props: {
     claim: {
       type: String,
-      default: "Knowledge Frontend Test"
+      default: 'Knowledge Frontend Test'
     }
+  },
+
+  setup (props) {
+    return { props }
   }
 }
 </script>

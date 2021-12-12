@@ -27,6 +27,10 @@ export default {
         'Actions'
       ]
     }
+  },
+
+  setup(props) {
+    return { props }
   }
 }
 </script>

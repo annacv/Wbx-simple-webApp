@@ -19,32 +19,49 @@ const getters = {
 }
 
 const actions = {
-  async loadChargers({ commit }) {
+  async loadChargers ({ commit }) {
     try {
       const response = await axios.get(this.state.dataUrl)
       const chargers = response.data
       commit('allChargers', chargers)
+      commit('filterChargers')
       commit('chargersCount', chargers.length)
     } catch (error) {
-      let localdata = []
-      for (let item in dataset) {
-        item = dataset[item]
-        localdata.push(item)
+      if (this.state.chargers.length > 0) {
+        commit('allChargers', this.state.chargers)
+        commit('chargersCount', this.state.chargers.length)
+        console.log(error, 'Displaying chargers from state', this.state.chargers)
+      } else {
+        let localdata = []
+        for (let item in dataset) {
+          item = dataset[item]
+          localdata.push(item)
+        }
+        commit('allChargers', localdata[0])
+        commit('chargersCount', localdata[0].length)
+        console.log(error, 'Displaying chargers from local', localdata[0])
       }
-      commit('allChargers', localdata[0])
-      commit('chargersCount', localdata[0].length)
-      console.log(error, 'Displaying chargers from local', localdata[0])
     }
   },
 
-  async loadSession({ commit }, chargerData) {
-    await axios.get(this.state.dataUrl + chargerData.id)
-    commit('chargerData', chargerData)
+  async loadSession ({ commit }, chargerData) {
+    try {
+      await axios.get(this.state.dataUrl + chargerData.id)
+      commit('chargerData', chargerData)
+    } catch (error) {
+      commit('chargerData', chargerData)
+      console.log(error, 'Displaying charger from local', chargerData)
+    }
   },
 
-  async deleteCharger({ commit }, chargerId) {
-    await axios.delete(this.state.dataUrl + chargerId)
-    commit('remove', chargerId)
+  async deleteCharger ({ commit }, chargerId) {
+    try {
+      await axios.delete(this.state.dataUrl + chargerId)
+      commit('remove', chargerId)
+    } catch (error) {
+      commit('removeFromLocal', chargerId)
+      console.log(error, 'Removing charger from local', chargerId)
+    }
   }
 }
 
@@ -72,13 +89,21 @@ const mutations = {
     })
   },
 
+  removeFromLocal (state, id) {
+    state.deleted = state.charger[id]
+    const filtered = state.chargers.filter(charger => {
+      return charger.id != id
+    })
+    state.chargers = filtered
+  },
+
   closeSession (state) {
     state.sessionLoaded = false
     state.charger = {}
   }
 }
 
-export default createStore({
+export default createStore ({
   state,
   getters,
   actions,

@@ -20,6 +20,7 @@ export default {
   props: {
     modelValue: {
       type: [String, Number],
+      default: ''
     },
   },
   emits: ["update:modelValue"],
@@ -46,7 +47,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .tabs {
   display: flex;
 }

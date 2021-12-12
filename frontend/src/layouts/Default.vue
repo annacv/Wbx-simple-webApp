@@ -3,7 +3,7 @@
     <main class="wrapper">
       <slot/>
     </main>
-  <TheFooter credits="Anna Condal" />
+  <TheFooter />
 </template>
 
 <script>
@@ -12,10 +12,7 @@ import TheFooter from '../components/TheFooter'
 
 export default {
   name: 'Default',
-  components: {
-    TheHeader,
-    TheFooter
-  }
+  components: { TheHeader, TheFooter }
 }
 </script>
 
@@ -52,7 +49,7 @@ export default {
 
   &__image {
     padding: 0.5rem 5rem;
-    background-image: url('~@/assets/wallbox-logo.svg');
+    background-image: url('~@/assets/images/wallbox-logo.svg');
     background-position: 94% 50%;
     background-repeat: no-repeat;
     background-size: 132px 32px;

@@ -16,10 +16,10 @@
         <span class="heading" v-if="item.contact"> 
           {{ item.contact }}
         </span>
-        <img
+        <Img
           v-if="item.icon"
-          :alt="item.icon.alt"
-          :src="item.icon.src"
+          :image="item.icon"
+          format="svg"
         />
       </a>
     </div>
@@ -27,18 +27,16 @@
 </template>
 
 <script>
-import github from '@/assets/github.svg'
-import linkedin from '@/assets/linkedin.svg'
+import Img from '@/components/Img'
 
 export default {
   name: 'TheFooter',
-
+  components: { Img },
   props: {
     credits: {
       type: String,
-      default: 'Your Name and Surname'
+      default: 'Anna Condal'
     },
-
     network: {
       type: Array,
       default: () => [
@@ -50,21 +48,18 @@ export default {
         {
           ariaLabel: 'Link to github profile page',
           href: 'https://github.com/annacv/',
-          icon: {
-            alt: 'github icon',
-            src: github
-          }
+          icon: 'github'
         },
         {
           ariaLabel: 'Link to linkedin profile page',
           href: 'https://www.linkedin.com/in/anna-condal-vela/',
-          icon: {
-            alt: 'linkedin icon',
-            src: linkedin
-          }
+          icon: 'linkedin'
         }
       ]
     }
+  },
+  setup (props) {
+    return { props }
   }
 }
 </script>

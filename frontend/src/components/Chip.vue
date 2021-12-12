@@ -1,6 +1,6 @@
 <template>
   <div :class="`chip__status--${type}`">
-    {{ text }}
+    {{ type }}
   </div>
 </template>
 
@@ -8,13 +8,9 @@
 export default {
   name: 'Chip',
   props: {
-    text: {
-      type: String,
-      default: ''
-    },
     type: {
       type: String,
-      default: 'charging'
+      default: ''
     }
   },
   setup(props) {
@@ -35,6 +31,7 @@ export default {
       line-height: 0.75rem;
       font-size: 0.625rem;
       text-align: center;
+      text-transform: uppercase;
     }
 
     &--charging {

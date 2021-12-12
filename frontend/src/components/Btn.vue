@@ -8,33 +8,32 @@
       {{text}}
     </button>
   </template>
-  <template v-if="src">
+  <template v-if="image">
     <div
       role="button"
       :class="`btn btn--${action}`"
       @click="onClick"
     >
-      <img
-        :alt="alt"
-        :src="src"
+      <Img
+        :image="image"
+        format="svg"
       />
     </div>
   </template>
 </template>
 
 <script>
+import Img from '@/components/Img'
+
 export default {
   name: 'Btn',
+  components: { Img },
   props: {
-    alt: {
-      type: String,
-      default: ''
-    },
     action: {
       type: String,
       default: 'info'
     },
-    src: {
+    image: {
       type: String,
       default: ''
     },
@@ -44,16 +43,19 @@ export default {
     },
   },
   emits: ["onClick"],
+
   setup(props, { emit }) {
     function onClick() {
       emit('onClick');
     }
 
-    return { props, onClick }
+    return {
+      props,
+      onClick
+    }
   }
 }
 </script>
-
 
 <style lang="scss" scoped>
   .btn {
@@ -62,6 +64,7 @@ export default {
     cursor: pointer;
 
     &--close,
+    &--info,
     &--remove {
       &:hover {
         opacity: 0.8;
@@ -74,11 +77,12 @@ export default {
     }
 
     &--info {
+      float: left;
       color: #5599ff;
-      margin-right: 2.875rem;
     }
 
     &--remove {
+      float: right;
       color: #ff6363;
     }
   }
